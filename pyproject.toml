@@ -4,14 +4,14 @@ build-backend = "hatchling.build"
 
 [project]
 name = "trade-strategy"
-dynamic = ["0.1.0"]
+version = "0.1.0"
 description = 'A Python package for analyzing investment portfolios, including using quantitative methods like the efficient frontier for calculations an optimal asset allocation strategy.'
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
 keywords = []
 authors = [
-  { name = "zerubabeldinsa", email = "zerubabel.dinsa@gmail.com" },
+  { name = "zerubabeldinsa", email = "zerubabel.dinsa@outlook.com" },
 ]
 classifiers = [
   "Development Status :: 4 - Beta",
