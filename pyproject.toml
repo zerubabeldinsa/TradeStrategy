@@ -32,7 +32,7 @@ dependencies = [
 
 [project.urls]
 Documentation = "https://github.com/zerubabeldinsa/trade-strategy#readme"
-Repository = "https://github.com/zerubabeldinsa/trade_strategy"
+Repository = "https://github.com/zerubabeldinsa/TradeStrategy"
 Issues = "https://github.com/zerubabeldinsa/trade-strategy/issues"
 Source = "https://github.com/zerubabeldinsa/trade-strategy"
 
