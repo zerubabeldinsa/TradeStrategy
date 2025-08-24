@@ -2,4 +2,4 @@
 #
 # SPDX-License-Identifier: MIT
 
-from . import portfolio_construction
+from .portfolio_construction.return_allocations.efficient_frontier import risk_return
