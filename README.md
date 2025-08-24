@@ -24,14 +24,14 @@ To use the `risk_return` function, you can use the following Python code:
 ```python
 from trade_strategy import risk_return
 
-tickers = ["AAPL", "MSFT"]
+tickers = ["AAPL", "MSFT", "GOOG"]
 start_date = '2013-03-07'
 end_date = '2025-04-05'
 
 risk_return(tickers, start_date, end_date)
 ```
 
-- **Assets:** `["AAPL", "MSFT"]`
+- **Assets:** `["AAPL", "MSFT", "GOOG"]`
 - **Start Date:** `2013-03-07`
 - **End Date:** `2025-04-05`
 
