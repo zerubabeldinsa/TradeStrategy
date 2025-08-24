@@ -17,15 +17,7 @@
 pip install trade-strategy
 ```
 
-## How to Run `allocations.py`
-
-To run the `allocations.py` module and see the portfolio allocation results, execute the following command from the project root directory:
-
-```console
-python allocations.py
-```
-
-Before running, ensure the following parameters are set within `allocations.py`:
+## How to Run
 
 - **Assets:** `["AAPL", "MSFT", "GOOG"]`
 - **Start Date:** `2013-01-01`

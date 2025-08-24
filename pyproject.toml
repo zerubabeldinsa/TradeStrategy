@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "trade-strategy"
-version = "0.1.0"
+version = "0.1.1"
 description = 'A Python package for analyzing investment portfolios, including using quantitative methods like the efficient frontier for calculations an optimal asset allocation strategy.'
 readme = "README.md"
 requires-python = ">=3.10"
@@ -32,6 +32,7 @@ dependencies = [
 
 [project.urls]
 Documentation = "https://github.com/zerubabeldinsa/trade-strategy#readme"
+Repository = "https://github.com/zerubabeldinsa/trade_strategy"
 Issues = "https://github.com/zerubabeldinsa/trade-strategy/issues"
 Source = "https://github.com/zerubabeldinsa/trade-strategy"
 
