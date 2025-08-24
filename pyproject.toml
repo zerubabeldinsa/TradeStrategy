@@ -31,10 +31,8 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/zerubabeldinsa/trade-strategy#readme"
+Documentation = "https://github.com/zerubabeldinsa/TradeStrategy"
 Repository = "https://github.com/zerubabeldinsa/TradeStrategy"
-Issues = "https://github.com/zerubabeldinsa/trade-strategy/issues"
-Source = "https://github.com/zerubabeldinsa/trade-strategy"
 
 [tool.hatch.version]
 path = "src/trade_strategy/__about__.py"
