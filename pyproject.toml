@@ -24,7 +24,11 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = [
+  "pandas",
+  "numpy",
+  "yfinance",
+]
 
 [project.urls]
 Documentation = "https://github.com/zerubabeldinsa/trade-strategy#readme"

@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import patch, MagicMock
 import pandas as pd
 import numpy as np
-from src.trade_strategy.portfolio_construction.efficient_frontier import EfPortfolio, risk_return, portfolio_returns, portfolio_risks, sharpe_ratios, portfolio_weights
+from trade_strategy.portfolio_construction.return_allocations.efficient_frontier import EfPortfolio, risk_return, portfolio_returns, portfolio_risks, sharpe_ratios, portfolio_weights
 
 class TestEfficientFrontier(unittest.TestCase):
 
