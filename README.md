@@ -8,7 +8,7 @@
 ## Table of Contents
 
 - [Installation](#installation)
-- [How to Run `allocations.py`](#how-to-run-allocationspy)
+- [How to Run `example.py`](#how-to-run-example.py)
 - [License](#license)
 
 ## Installation
