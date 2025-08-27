@@ -1,5 +1,5 @@
 
 # Packaging
-.dist/
+dist/
 build/
 *.egg-info/
