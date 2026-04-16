@@ -37,32 +37,32 @@ risk_return(tickers, start_date, end_date)
 
 ### Expected Output
 
-The script will output the lowest risk, highest returns, and highest Sharpe ratio allocations for the specified tickers and date range.
+The script will output a JSON payload containing the lowest risk, highest returns, and highest Sharpe ratio allocations for the specified tickers and date range. The `returns` and `volatility` fields are expressed as percentages.
 
-```
-Lowest risk Allocation
-Returns                    0.248073
-Risk                       0.234054
-Sharpe Ratio               1.059898
-Weights         [0.347, 0.352, 0.3]
-Name: 69, dtype: object
-['AAPL', 'MSFT', 'GOOG']
-
-Highest Returns Allocation
-Returns                      0.268417
-Risk                         0.262248
-Sharpe Ratio                 1.023524
-Weights         [0.003, 0.986, 0.011]
-Name: 116, dtype: object
-['AAPL', 'MSFT', 'GOOG']
-
-Highest Sharpe Allocation
-Returns                      0.258282
-Risk                         0.238805
-Sharpe Ratio                 1.081562
-Weights         [0.301, 0.588, 0.111]
-Name: 128, dtype: object
-['AAPL', 'MSFT', 'GOOG']
+```json
+{
+  "lowest_risk_allocation": {
+    "returns": 24.8073,
+    "volatility": 23.4054,
+    "sharpe_ratio": 1.059898,
+    "weights": [0.347, 0.352, 0.3],
+    "assets": ["AAPL", "MSFT", "GOOG"]
+  },
+  "highest_returns_allocation": {
+    "returns": 26.8417,
+    "volatility": 26.2248,
+    "sharpe_ratio": 1.023524,
+    "weights": [0.003, 0.986, 0.011],
+    "assets": ["AAPL", "MSFT", "GOOG"]
+  },
+  "highest_sharpe_allocation": {
+    "returns": 25.8282,
+    "volatility": 23.8805,
+    "sharpe_ratio": 1.081562,
+    "weights": [0.301, 0.588, 0.111],
+    "assets": ["AAPL", "MSFT", "GOOG"]
+  }
+}
 ```
 
 ## License

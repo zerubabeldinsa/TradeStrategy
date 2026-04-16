@@ -26,7 +26,7 @@ class TestEfficientFrontier(unittest.TestCase):
         end_date = '2023-01-10'
 
         # Call the main function
-        risk_return(symbols, start_date, end_date)
+        result = risk_return(symbols, start_date, end_date)
 
         # Assertions
         self.assertGreater(len(portfolio_returns), 0)
@@ -37,6 +37,21 @@ class TestEfficientFrontier(unittest.TestCase):
         self.assertEqual(len(portfolio_returns), len(portfolio_risks))
         self.assertEqual(len(portfolio_returns), len(sharpe_ratios))
         self.assertEqual(len(portfolio_returns), len(portfolio_weights))
+        self.assertIsInstance(result, dict)
+        self.assertSetEqual(
+            set(result.keys()),
+            {'lowest_risk_allocation', 'highest_returns_allocation', 'highest_sharpe_allocation'}
+        )
+
+        for allocation in result.values():
+            self.assertIn('returns', allocation)
+            self.assertIn('volatility', allocation)
+            self.assertIn('sharpe_ratio', allocation)
+            self.assertIn('weights', allocation)
+            self.assertIn('assets', allocation)
+            self.assertIsInstance(allocation['returns'], float)
+            self.assertIsInstance(allocation['volatility'], float)
+            self.assertEqual(allocation['assets'], symbols)
 
         # Check if the results DataFrame is created and has expected columns
         # We need to instantiate EfPortfolio again to access its internal state after risk_return
@@ -54,6 +69,18 @@ class TestEfficientFrontier(unittest.TestCase):
         self.assertIsInstance(ef_portfolio_instance.min_risk, pd.Series)
         self.assertIsInstance(ef_portfolio_instance.highest_return, pd.Series)
         self.assertIsInstance(ef_portfolio_instance.highest_sharpe, pd.Series)
+        self.assertIsInstance(ef_portfolio_instance.results_payload, dict)
+
+        expected_lowest_risk_return = round(float(ef_portfolio_instance.min_risk['Returns']) * 100, 6)
+        expected_lowest_risk_volatility = round(float(ef_portfolio_instance.min_risk['Risk']) * 100, 6)
+        self.assertEqual(
+            ef_portfolio_instance.results_payload['lowest_risk_allocation']['returns'],
+            expected_lowest_risk_return,
+        )
+        self.assertEqual(
+            ef_portfolio_instance.results_payload['lowest_risk_allocation']['volatility'],
+            expected_lowest_risk_volatility,
+        )
 
         
 

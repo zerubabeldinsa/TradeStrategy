@@ -1,5 +1,6 @@
 # Importing modules
 import random                                                                                                                                                                                                              
+import json
 import pandas as pd        
 import numpy as np 
 import yfinance as yf
@@ -86,21 +87,23 @@ class EfPortfolio():
         # Calculate Portfolio with Highest Sharpe Ratio
         self.highest_sharpe = self.portfolios_df.iloc[self.portfolios_df['Sharpe Ratio'].astype(float).idxmax()] 
 
-        # Portfolio yielding the lowest risk                                                                                                                 
-        print('Lowest risk Allocation')                                                                                                
-        print(self.min_risk)                                                                                                
-        print(self.tickers)                                                                                                 
-        print('')                                                                                                           
-        # Portfolio yielding the highest return                                                                                                                        
-        print('Highest Returns Allocation')                                                                                            
-        print(self.highest_return)                                                                                          
-        print(self.tickers)                                                                                                 
-        print('')                                                                                                           
-        # Portfolio yielding the highest sharpe                                                                                                                         
-        print('Highest Sharpe Allocation')                                                                                             
-        print(self.highest_sharpe)                                                                                          
-        print(self.tickers)                                                                                                 
-        print('')
+        def format_allocation(portfolio_row):
+            return {
+                'returns': round(float(portfolio_row['Returns']) * 100, 6),
+                'volatility': round(float(portfolio_row['Risk']) * 100, 6),
+                'sharpe_ratio': round(float(portfolio_row['Sharpe Ratio']), 6),
+                'weights': [float(weight) for weight in portfolio_row['Weights']],
+                'assets': self.tickers,
+            }
+
+        self.results_payload = {
+            'lowest_risk_allocation': format_allocation(self.min_risk),
+            'highest_returns_allocation': format_allocation(self.highest_return),
+            'highest_sharpe_allocation': format_allocation(self.highest_sharpe),
+        }
+
+        print(json.dumps(self.results_payload, indent=2))
+        return self.results_payload
 
 
 # Function for Calling Object
@@ -110,6 +113,6 @@ def risk_return(symbols, start_date, end_date):
     cEfPortfolio.Vars(symbols, start_date, end_date)                                                                                          
     cEfPortfolio.StockData()                                                                                                
     cEfPortfolio.risk_reward()                                                                                             
-    cEfPortfolio.results()        
+    return cEfPortfolio.results()        
                                                                                 
 # risk_return(symbols)
