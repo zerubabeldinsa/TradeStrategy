@@ -91,12 +91,12 @@ class EfPortfolio():
         print(self.min_risk)                                                                                                
         print(self.tickers)                                                                                                 
         print('')                                                                                                           
-        # Portfolio yielding the highest                                                                                                                         
+        # Portfolio yielding the highest return                                                                                                                        
         print('Highest Returns Allocation')                                                                                            
         print(self.highest_return)                                                                                          
         print(self.tickers)                                                                                                 
         print('')                                                                                                           
-        # Portfolio yielding the highest risk                                                                                                                         
+        # Portfolio yielding the highest sharpe                                                                                                                         
         print('Highest Sharpe Allocation')                                                                                             
         print(self.highest_sharpe)                                                                                          
         print(self.tickers)                                                                                                 

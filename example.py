@@ -1,4 +1,6 @@
-from efficient_frontier import risk_return
+from trade_strategy import risk_return
+#from efficient_frontier import risk_return
+#from src.trade_strategy.portfolio_construction.return_allocations.efficient_frontier import risk_return
 
 # Dates
 start_date = '2013-01-01' 
