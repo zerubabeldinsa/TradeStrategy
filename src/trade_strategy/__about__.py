@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2025-present zerubabeldinsa <zerubabel.dinsa@gmail.com>
 #
 # SPDX-License-Identifier: MIT
-__version__ = "0.1.4"
+__version__ = "0.1.5"
 __author__ = "zerubabeldinsa"
 __email__ = "zerubabel.dinsa@gmail.com"
 __license__ = "MIT"
